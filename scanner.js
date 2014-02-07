@@ -1,8 +1,8 @@
 //NodeScanner - v0.1
 var net = require('net');
-
-// the machine to scan
-var host = 'localhost';
+console.log('NodeScanner - v0.1');
+// host to scan
+var host =  'localhost';
 // starting from port number
 var start = 1;
 // to port number
@@ -21,7 +21,7 @@ while (start <= end) {
     // we create an anonynous function, pass the current port, and operate on it
     // the reason we encapsulate the socket creation process is because we want to preseve the value of `port` for the callbacks 
     (function(port) {
-        // console.log('CHECK: ' + port);
+        //console.log('CHECK: ' + port);
         var s = new net.Socket();
         
         s.setTimeout(timeout, function() { s.destroy(); });
