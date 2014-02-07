@@ -6,7 +6,7 @@ var host = 'localhost';
 // starting from port number
 var start = 1;
 // to port number
-var end = 10000;
+var end = 1024;
 // sockets should timeout asap to ensure no resources are wasted
 // but too low a timeout value increases the likelyhood of missing open sockets, so be careful
 var timeout = 2000;
