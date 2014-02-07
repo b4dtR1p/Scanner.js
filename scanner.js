@@ -1,8 +1,18 @@
+#!/usr/bin/env node
 //NodeScanner - v0.1
-var net = require('net');
 console.log('NodeScanner - v0.1');
+
+var net = require('net');
+function host() {
+    var argv = require('optimist')
+        .usage('Usage: $scanner.js -h [host]')
+        .demand(['h'])
+        .argv;
+    return(argv.h);
+};
+
 // host to scan
-var host =  'localhost';
+var host =  host();
 // starting from port number
 var start = 1;
 // to port number
