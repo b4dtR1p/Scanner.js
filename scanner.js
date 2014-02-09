@@ -1,18 +1,27 @@
 #!/usr/bin/env node
 //NodeScanner - v0.1
-console.log('NodeScanner - v0.1');
-
+console.log('NodeScanner - v0.1 - Open Port List:\n');
+var colors = require('colors');
+var http = require('http');
 var net = require('net');
+
+// get host from user command input && print menu
 function host() {
     var argv = require('optimist')
-        .usage('Usage: $scanner.js -h [host]')
+        .usage('Usage:$ scanner.js -h [host]')
         .demand(['h'])
         .argv;
     return(argv.h);
 };
-
 // host to scan
 var host =  host();
+// http headers request
+var option = {method: 'HEAD', host: host, port: 80, path: '/'};
+var req = http.request(option, function(res) {
+    console.log('Http headers:\n');
+    console.log(JSON.stringify(res.headers));
+});
+req.end();
 // starting from port number
 var start = 1;
 // to port number
