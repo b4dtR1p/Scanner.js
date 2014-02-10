@@ -22,7 +22,7 @@ request.get({
     proxy: 'http://localhost:9050'
 }, function (err, resp, body) {
     if (err || resp.statusCode != 200) {
-        console.log('oops! somethin failed');
+        console.log('oops! something failed');
     }
     else {
         // http headers request
