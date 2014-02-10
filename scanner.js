@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 //NodeScanner - v0.1
 var colors = require('colors');
-console.log('NodeScanner - v0.1 - Open Port List:\n'.blue);
+console.log('NodeScanner - v0.1 - Open Port List:\n'.rainbow);
 var http = require('http');
 var net = require('net');
 //var request = require('request');
@@ -9,7 +9,7 @@ var net = require('net');
 // get host from user command input && print menu
 function host() {
     var argv = require('optimist')
-        .usage('Usage:$ scanner.js -h [host]'.magenta)
+        .usage('Usage:$ scanner.js -h [host]'.cyan)
         .demand(['h'])
         .argv;
     return(argv.h);
@@ -32,7 +32,7 @@ var host =  host();
 // http headers request
 var option = {method: 'HEAD', host: host, port: 80, path: '/', agent: false};
 var req = http.request(option, function(res) {
-    console.log('Http headers:\n'.red);
+    console.log('Http headers:\n'.rainbow);
     console.log(JSON.stringify(res.headers).green);
 });
 req.end();
@@ -59,7 +59,7 @@ while (start <= end) {
         
         s.setTimeout(timeout, function() { s.destroy(); });
         s.connect(port, host, function() {
-            console.log(('OPEN: ' + port).magenta);
+            console.log(('OPEN: ' + port).cyan);
             // we don't destroy the socket cos we want to listen to data event
             // the socket will self-destruct in 2 secs cos of the timeout we set, so no worries
         });
@@ -76,6 +76,4 @@ while (start <= end) {
         });
     })(port);
     start++;
-}
-
 }
