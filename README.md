@@ -5,7 +5,7 @@ It's a simple port scanner made in NodeJs
 
 npm library used
 ================
-net, optimist, colors, http;
+net, optimist, colors, http, request;
 
 To install try: npm install [name-packg]
 
