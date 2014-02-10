@@ -4,7 +4,7 @@ var colors = require('colors');
 console.log('NodeScanner - v0.1 - Open Port List:\n'.blue);
 var http = require('http');
 var net = require('net');
-var request = require('request');
+//var request = require('request');
 
 // get host from user command input && print menu
 function host() {
@@ -18,17 +18,17 @@ function host() {
 var host =  host();
 
 // request over Tor proxy
-request.get({
-    uri: host,
-    proxy: 'http://localhost:9050'
-}, function (err, resp, body) {
-    if (err || resp.statusCode != 200) {
-        console.log(('oops! something failed').red);
-    }
-    else {
-        console.log(body)
-    }
-});
+//request.get({
+//    uri: host,
+//    proxy: 'http://localhost:9050'
+//}, function (err, resp, body) {
+//    if (err || resp.statusCode != 200) {
+//        console.log(('oops! something failed').red);
+//    }
+//    else {
+//        console.log(body)
+//    }
+//});
 // http headers request
 var option = {method: 'HEAD', host: host, port: 80, path: '/', agent: false};
 var req = http.request(option, function(res) {
@@ -75,6 +75,7 @@ while (start <= end) {
             s.destroy();
         });
     })(port);
-    
     start++;
+}
+
 }
