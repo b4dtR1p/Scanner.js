@@ -26,7 +26,7 @@ request.get({
     }
     else {
         // http headers request
-        var option = {method: 'HEAD', host: host, port: 80, path: '/'};
+        var option = {method: 'HEAD', host: host, port: 80, path: '/', agent: false};
         var req = http.request(option, function(res) {
         console.log('Http headers:\n'.red);
         console.log(JSON.stringify(res.headers).green);
