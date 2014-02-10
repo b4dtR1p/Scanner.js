@@ -16,25 +16,26 @@ function host() {
 };
 // host to scan
 var host =  host();
+
 // request over Tor proxy
 request.get({
     uri: host,
     proxy: 'http://localhost:9050'
 }, function (err, resp, body) {
     if (err || resp.statusCode != 200) {
-        console.log('oops! something failed');
+        console.log(('oops! something failed').red);
     }
     else {
-        // http headers request
-        var option = {method: 'HEAD', host: host, port: 80, path: '/', agent: false};
-        var req = http.request(option, function(res) {
-        console.log('Http headers:\n'.red);
-        console.log(JSON.stringify(res.headers).green);
-        });
-    req.end();
+        console.log(body)
     }
 });
-
+// http headers request
+var option = {method: 'HEAD', host: host, port: 80, path: '/', agent: false};
+var req = http.request(option, function(res) {
+    console.log('Http headers:\n'.red);
+    console.log(JSON.stringify(res.headers).green);
+});
+req.end();
 // starting from port number
 var start = 1;
 // to port number
@@ -65,7 +66,7 @@ while (start <= end) {
         
         // if any data is written to the client on connection, show it
         s.on('data', function(data) {
-            console.log((port +': '+ data).blue);
+            console.log((port +': '+ data).magenta);
             s.destroy();
         });
         
