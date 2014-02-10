@@ -1,11 +1,13 @@
-Scanner.js
+NodeScanner.js
 ==========
 
 It's a simple port scanner made in NodeJs
 
 npm library used
 ================
-net, optimist;
+net, optimist, colors, http;
+
+To install try: npm install [name-packg]
 
 
 Trubleshooting OSX
