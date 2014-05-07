@@ -7,8 +7,10 @@ npm library used
 ================
 net, optimist, colors, http, request;
 
-To install try: npm install [name-packg]
+To install navigate in the scanner.js directory and from command line:
+    npm install
 
+and the package.jon install all dependencies automatically
 
 Trubleshooting OSX
 ==================
