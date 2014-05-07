@@ -1,0 +1,15 @@
+{
+    "name": "Scanner.js",
+    "version": "0.0.2",
+    "private": true,
+    "script": {
+        "start": "node scanner.js"
+    },
+    "dependencies": {
+        "net": "*",
+        "optimist": "*",
+        "colors": "*",
+        "http": "*",
+        "request": "*"
+    }
+}

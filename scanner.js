@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-//NodeScanner - v0.1
+//NodeScanner - v0.0.2
 var colors = require('colors');
-console.log('NodeScanner - v0.1 - Open Port List:\n'.rainbow);
+console.log('NodeScanner - v0.0.2 - Open Port List:\n'.rainbow);
 var http = require('http');
 var net = require('net');
 //var request = require('request');
